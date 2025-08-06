@@ -85,6 +85,4 @@
 - `trained_model.pkl`
 - (Optional) `Flask app/` folder
 
----
 
-Let me know if you want this in a PDF, Notion template, or starter code format.
