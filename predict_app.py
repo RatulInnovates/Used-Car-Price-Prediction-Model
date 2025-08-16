@@ -6,13 +6,13 @@ import joblib
 from datetime import datetime
 
 # Load trained model
-model = joblib.load("used_car_price_model.pkl")
+model = joblib.load("Notebooks/used_car_price_model.pkl")
 
 st.set_page_config(page_title="Used Car Price Predictor", layout="centered")
 st.title("Used Car Price Predictor")
 
 # Define brands and models
-cars = pd.read_csv("../Data/cleaned_data_updated.csv")
+cars = pd.read_csv("Data/cleaned_data_updated.csv")
 cars_uni = cars.drop_duplicates(subset=["brand", "model"])
 
 brand_model_dict = cars_uni.groupby("brand")["model"].apply(list).to_dict()
@@ -25,7 +25,6 @@ with col1:
     brand = st.selectbox("Brand", list(brand_model_dict.keys()))
     year = st.slider("Year", 1980, datetime.now().year, 2015)
     fuel_type = st.selectbox("Fuel Type", fuel_list)
-    condition = st.selectbox("Condition", ["Reconditioned", "Used"])
     transmission = st.selectbox("Transmission", ["Manual", "Automatic"])
 
 with col2:
@@ -33,6 +32,7 @@ with col2:
     models_for_brand = brand_model_dict[brand]
     model_name = st.selectbox("Model Name", models_for_brand)
     kilometers_run = st.number_input("Mileage (km)", 0, 500000, 50000)
+    condition = st.selectbox("Condition", ["Reconditioned", "Used"])
 
 age = datetime.now().year - year
 km_per_year = kilometers_run / age
