@@ -1,11 +1,12 @@
 # predict_app.py
+# run "streamlit run predict_app.py"
 import streamlit as st
 import pandas as pd
 import joblib
 from datetime import datetime
 
 # Load trained model
-model = joblib.load("../Notebooks/used_car_price_model.pkl")
+model = joblib.load("used_car_price_model.pkl")
 
 st.set_page_config(page_title="Used Car Price Predictor", layout="centered")
 st.title("Used Car Price Predictor")
