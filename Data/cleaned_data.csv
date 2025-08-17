@@ -1,4 +1,4 @@
-,price,brand,model,year,condition,transmission,fuel_type,kilometers_run
+index,price,brand,model,year,condition,transmission,fuel_type,kilometers_run
 0,2450000,toyota,fielder,2020,reconditioned,automatic,hybrid,86000
 1,4500000,toyota,noah,2020,reconditioned,automatic,octane,68000
 2,2750000,honda,cr-v,2012,used,automatic,octane,92000
